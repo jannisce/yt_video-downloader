@@ -10,7 +10,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/youtube', youtubeRoutes);
-app.use('/facebook', facebookRoutes);
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n\nServidor escuchando en http://localhost:${PORT}\n\n`);
