@@ -1,16 +1,18 @@
-import express from 'express';
-import youtubeRoutes from './routes/youtube.js';
-import facebookRoutes from './routes/facebook.js';
+import cors from 'cors'
+import express from 'express'
+import youtubeRoutes from './routes/youtube.js'
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const app = express()
+app.use(cors())
+
+const PORT = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
+  res.send('¡Hola, mundo!')
+})
 
-app.use('/youtube', youtubeRoutes);
+app.use('/youtube', youtubeRoutes)
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`\n\nServidor escuchando en http://localhost:${PORT}\n\n`);
-});
+  console.log(`\n\nServidor escuchando en http://localhost:${PORT}\n\n`)
+})
