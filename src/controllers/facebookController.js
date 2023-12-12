@@ -34,23 +34,25 @@
 
 import fbDownloader from 'fb-video-downloader'
 
-// export async function downloadFacebookVideo(req, res) {
-//   // const videoURL = req.query.url
-//   const videoURL = 'https://www.facebook.com/ingsebastiansiero/videos/371139878643729/'
+export async function downloadFacebookVideo(req, res) {
+  const videoURL = req.query.url
+  // const videoURL = 'https://www.facebook.com/ingsebastiansiero/videos/371139878643729/'
 
-//   if (!videoURL) {
-//     return res.status(400).send('Se requiere una URL de video de Facebook')
-//   }
-//   try {
-//     fbDownloader.getInfo(videoURL)
-//       .then(info => console.log(JSON.stringify(info, null, 2)))
-//       // .catch(error => console.error('Error al obtener información del video:', error))
-//   } catch (error) {
-//     console.error('Error al descargar el video de Facebook: ', error)
-//     return res.status(500).send('Error al procesar la solicitud')
-//   }
+  if (!videoURL) {
+    return res.status(400).send('Se requiere una URL de video de Facebook')
+  }
+  try {
+    fbDownloader.getInfo(videoURL)
+      .then(info => console.log(JSON.stringify(info, null, 2)))
+      // .catch(error => console.error('Error al obtener información del video:', error))
+  } catch (error) {
+    console.error('Error al descargar el video de Facebook: ', error)
+    return res.status(500).send('Error al procesar la solicitud')
+  }
 
-// }
+}
 
-fbDownloader.getInfo('https://www.facebook.com/watch/?v=371139878643729')
-.then(info => console.log(JSON.stringify(info, null, 2)))
+
+
+// fbDownloader.getInfo('https://www.facebook.com/watch/?v=371139878643729')
+// .then(info => console.log(JSON.stringify(info, null, 2)))
